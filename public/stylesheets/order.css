@@ -1,0 +1,345 @@
+body{
+  background-color: #eff5f8;
+}
+
+h5, h6{
+  font-weight: bold;
+}
+
+.white{
+  background-color: #fff;
+}
+
+.curved-edge{
+  border-radius: 5px;
+}
+
+.custom-top-padding-25{
+  padding-top: 25px;
+}
+
+.custom-top-padding-10{
+  padding-top: 10px;
+}
+
+.col-1{
+  padding-right: 25px;
+}
+.col-2{
+  padding-left: 25px;
+}
+
+.block-header{
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.block-header-desc{
+  float: right;
+  text-transform: capitalize;
+  color: #c0c8cc;
+  font-size: 12px;
+}
+
+.service-selection, .account-info, .delivery-days, .order-summary{
+  padding: 20px;
+}
+
+.service-type h6{
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #c0c8cc;
+}
+
+.service-type h6.selected{
+  border-bottom: 2px solid #e74242;
+  color: #000
+}
+
+.account-info{
+  min-height: 121px;
+}
+
+.account-info h6{
+  font-weight: bold;
+  padding-top: 10px;
+}
+
+.account-image{
+  padding-top: 2%;
+}
+
+.account-image h6{
+  font-weight: bold;
+}
+
+.user-image{
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.delivery-days{
+  min-height: 250px;
+}
+
+.delivery-date-header, .order-summary-header, .promotions-header{
+  padding-bottom: 20px;
+}
+
+.table>tbody>tr>th, .borderless tbody, .borderless th, .borderless td{
+  border: none !important;
+}
+
+.order-summary-date{
+  color: #c0c8cc;
+  font-size: 10px;
+}
+
+.row-border-bottom{
+  border-bottom: 1.5px solid #c0c8cc !important;
+}
+
+.order-summary-quantity{
+  background-color: #c0c8cc;
+  padding: 5px 8px;
+  color: white;
+  border-radius: 2px;
+}
+
+.order-summary-calculation-text{
+  color: #c0c8cc;
+  text-align: right;
+  padding-right: 15%;
+}
+
+.order-summary-calculation-figures{
+  text-align: right;
+  padding-right: 25%;
+}
+
+.calculations td{
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+}
+
+.custom-padding-bottom-10{
+  padding-bottom: 10px !important;
+}
+
+.default-order{
+  padding-top: 3px;
+}
+
+.order-days-radio{
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.margin-adjust-negative-20{
+  margin-top: -20px;
+}
+
+.place-order{
+  text-transform: uppercase;
+  width: 100%;
+  background-color: #e74242;
+  color: #fff;
+  margin-bottom: 25px;
+}
+
+.grand-total-section{
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 10%;
+  border-top: 1px solid #c0c8cc;
+}
+
+.promo-code-section{
+  margin-top: 10px;
+  padding: 20px;
+}
+
+.apply-code{
+  color: #fff;
+  background-color: #e74242;
+  width: 33%;
+  text-transform: uppercase;
+}
+
+.meal-selection{
+  margin-top: 25px;
+  padding: 20px;
+}
+
+.meal-type img{
+  padding-bottom: 2px;
+}
+
+.meal-type{
+  padding-top: 8px;
+  font-size: 11px;
+}
+
+.outside-border{
+  border-bottom: 2px solid #03af7e;
+  padding-bottom: 4px;
+  margin-right: 10px;
+  font-size: 11px;
+}
+.double-bottom-border{
+  border-bottom: 2px solid #e74242;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.filters-div{
+  margin-top: 10px;
+}
+
+.filtered-preference{
+  border-left: #03af7e 4px solid;
+  padding: 20px;
+  padding-top: 30px;
+  margin-top: 15px;
+}
+
+.food-showcase-image{
+  border-radius: 5px;
+}
+
+.chef-details{
+  padding-top: 10px;
+}
+
+.chef-image{
+  width: 50px;
+  border-radius: 50%;
+}
+
+.chef-name{
+  font-weight: bold;
+  padding-left: 10px;
+  font-size: 12px;
+}
+
+input[type='text']{
+  background-color: #c0c8cc;
+}
+
+.special-instructions{
+  margin-top: 10px;
+}
+
+.dish-name img{
+  width: 15px;
+  padding-bottom: 3px;
+}
+
+.dish-name, .dish-price{
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.social-share{
+  margin-top: 60px;
+}
+
+.facebook-span{
+  border: #3864A3 2px solid;
+  border-radius: 50%;
+  padding: 6px 10px;
+  color: #3864A3;
+}
+
+.twitter-span{
+  border: #2CAAE1 2px solid;
+  border-radius: 50%;
+  padding: 6px 8px;
+  color: #2CAAE1;
+}
+
+.linkedin-span{
+  border: #0177B5 2px solid;
+  border-radius: 50%;
+  padding: 6px 8px;
+  color: #0177B5;
+}
+
+.quantity-row{
+  font-weight: bold;
+  margin-top: 30px;
+}
+
+.meal-quantity span{
+  padding-right: 10px;
+}
+
+.meal-quantity{
+  margin-top: 20px;
+}
+
+.add-dish{
+  margin-top: 19px;
+}
+
+.add-dish-button{
+  background-color: #e74242;
+  color: #fff;
+  width: 125px;
+}
+
+.dropdown-menu{
+  left: 56px;
+  top: 34px;  
+}
+.wallet-wrapper{
+  width : 125px;
+}
+.wallet-wrapper h6{
+      padding: 0;
+    margin: 0;
+}
+.wallet-wrapper p{
+    font-size: 10px;
+    font-weight: bold;
+    margin: auto
+}
+
+select {
+  background:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='50px' height='50px'><polyline points='46.139,15.518 25.166,36.49 4.193,15.519'/></svg>");
+
+  background-repeat:no-repeat;
+  background-position: right 10px top 15px;
+  background-size: 16px 16px;
+  padding:12px;
+  padding-right: 24px;
+  width:auto;
+  font-size:16px;
+  font-weight:bold;
+  color:#000;
+  text-align:center;
+  text-shadow:0 -1px 0 rgba(0, 0, 0, 0.25);
+  border-radius:3px;
+  -webkit-border-radius:3px;
+  -webkit-appearance: none;
+  border:0;
+  outline:0;
+  -webkit-transition:0.3s ease all;
+	   -moz-transition:0.3s ease all;
+	    -ms-transition:0.3s ease all;
+	     -o-transition:0.3s ease all;
+	        transition:0.3s ease all;
+}
+
+
+select:focus, select:active {
+  border:0;
+  outline:0;
+}
+.payment-mode {
+    font-size: 19px;
+}
+
+.payment-mode label {
+    margin-left: 15px;
+}

@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="row">
+    <div class="center-form panel">
+      <div class="panel-body">
+        <h2 class="text-center">Recharge wallet</h2>
+        <form method="post" ng-submit="signup()" name="rechargeForm">
+
+          <div class="form-group has-feedback">
+            <input class="form-control input-lg" type="number" id="amount" name="amount" ng-model="amount" placeholder="3000" required>
+            <span class="fa-inr form-control-feedback"></span>
+            <div class="help-block text-danger" ng-if="rechargeForm.amount.$dirty" ng-messages="rechargeForm.amount.$error">
+              <div ng-message="required">Enter an amount.</div>
+            </div>
+          </div>
+
+          <p class="text-center text-muted"><small>By clicking on Recharge, you agree to <a href="#">terms & conditions</a> and <a href="#">privacy policy</a></small></p>
+
+          <button type="submit" ng-disabled="rechargeForm.$invalid" class="btn btn-lg btn-block btn-primary">Recharge</button>
+          <br/>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+

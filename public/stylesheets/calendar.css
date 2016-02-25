@@ -1,0 +1,111 @@
+.pickadate
+{
+	font-family: 'Helvetica Neue', Helvetica, Helvetica, Arial, sans-serif;
+}
+.pickadate a
+{
+	color: #666666;
+}
+.pickadate a:visited
+{
+	color: #666666;
+}
+.pickadate-header
+{
+	position: relative;
+}
+.pickadate-main
+{
+	font-size: 12px;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	width: 100%;
+}
+.pickadate-cell
+{
+	margin: 0;
+	overflow: hidden;
+	padding: 0;
+}
+.pickadate-cell li
+{
+	box-sizing: border-box;
+	display: block;
+	float: left;
+	line-height: normal;
+	moz-box-sizing: border-box;
+	padding: 1% 0 0% 0;
+	webkit-box-sizing: border-box;
+	/*width: 14.285%;*/
+	width: 7%;
+  height: 26px;
+}
+ .pickadate-cell .pickadate-disabled
+{
+	color: #DCDCDC;
+}
+.pickadate-cell .pickadate-disabled a
+{
+	color: #DCDCDC;
+}
+.pickadate-cell .pickadate-enabled
+{
+	color: #666666;
+	cursor: pointer;
+	font-size: 12px;
+}
+.pickadate-cell .pickadate-today
+{
+	background-color: #03af7e;
+  border-radius: 50%;
+  color: #fff;
+}
+.pickadate-cell .pickadate-active
+{
+	background-color: #b52a00;
+	color: white;
+  border-radius: 50%;
+}
+.pickadate-cell .pickadate-head
+{
+  font-weight: bold;
+}
+/*
+.pickadate-cell .pickadate-head:nth-child(1), .pickadate-cell .pickadate-head:nth-child(7)
+{
+	background: #f3f3f3;
+}
+*/
+.pickadate-centered-heading
+{
+	font-size: 1em;
+	font-weight: normal;
+	line-height: normal;
+	margin: 13px 0 13px 0;
+	text-align: center;
+}
+.pickadate-controls
+{
+	position: absolute;
+	width: 100%;
+	z-index: 10;
+}
+.pickadate-controls .pickadate-next
+{
+	float: right;
+}
+.pickadate-controls a
+{
+	font-size: 0.9em;
+	text-decoration: none;
+}
+.pickadate-modal
+{
+	background-color: #fff;
+	border-radius: 4px;
+	padding: 0 5px 5px 5px;
+	position: absolute;
+	width: 300px;
+	z-index: 1000;
+}

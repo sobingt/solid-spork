@@ -1,0 +1,193 @@
+<div class="container">
+  <div class="row custom-top-padding-25">
+    <div class="col-md-6 col-md-offset-1 col-xs-12 col-1">
+      <div class="row white curved-edge service-selection">
+        <div class="col-md-12">
+          <h5><span class="block-header">SELECT SERVICE</span> <span class="block-header-desc"><em>Select type of service</em></span></h5>
+          <ul class="list-unstyled list-inline service-type">
+            <li><h6 class="selected">Tiffin Service</h6></li>
+            <li><h6>All Day</h6></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 col-xs-12 col-2">
+      <div class="row white curved-edge account-info">
+        <div class="col-md-12 account-image">
+          <div class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img ng-src="{{user.profile.picture || 'http://placehold.it/100x100'}}" width="50px" class="user-image pull-left"/><h6>Bonjour {{user.profile.name}} !<span class="fa fa-caret-down"></span></h6></a>
+            <ul class="dropdown-menu">
+              <li><a href="/#/profile">Profile</a></li>
+              <li><a href="/#/profile">Setting</a></li>
+              <li><a href="/#/recharge">Recharge Now</a></li>
+              <li><a href="/#/logout">Logout</a></li>
+            </ul>
+          </div>
+          <div class="wallet-wrapper">
+            <h6>INR 3000</h6>
+            <p>Wallet</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row custom-top-padding-10">
+    <div class="col-md-6 col-md-offset-1 col-xs-12 col-1">
+      <div class="row white curved-edge delivery-days">
+        <div class="col-md-12 delivery-date-header">
+          <h5><span class="block-header">Delivery Date</span> <span class="block-header-desc"><em>select single or multiple days of delivery</em></span></h5>
+          
+          <div style="width:100%;float:left;margin-right:19px;" pickadate multiple ng-model="firstDate" min-date="minDate" max-date="maxDate"></div>
+        </div>
+      </div>
+      <div class="row white curved-edge meal-selection">
+        <div class="col-md-12 meal-selection-header">
+          <h5><span class="block-header">Meal Selection</span> <span class="block-header-desc"><em>Select meal by preference</em></span></h5>
+        </div>
+        <div class="col-md-12">
+          <h5><span class="block-header-desc pull-left"><em>Delivered via the Dabbawallas</em></span></h5>
+        </div>
+        <div class="col-md-4">
+          <select>
+              <option value="Dinner">Dinner</option>multiple 
+              <option value="Lunch" selected>Lunch</option>
+          </select>
+        </div>
+        <div class="col-md-3 meal-type">
+          <input type="checkbox" name="mealType" ng-click="getMenuByCategory('veg')" value="Veg" /> <label>VEG <img src="images/veg-symbol.png" width="15px" /> </label>
+        </div>
+        <div class="col-md-5 meal-type">
+          <input type="checkbox" name="mealType" ng-click="getMenuByCategory('non-veg')" value="Non-Veg" /> <label>NON-VEG <img src="images/non-veg-symbol.png" width="15px" /> </label>
+        </div>
+        <div class="col-md-12 filters-div">
+          <span class="outside-border"> <span ng-click="getMenuByCategory('salad')" class="double-bottom-border">Salad</span></span>
+          <span class="outside-border"><span ng-click="getMenuByCategory('sandwich')" class="double-bottom-border">Sandwich</span></span>
+          <span class="outside-border"><span ng-click="getMenuByCategory('pasta')" class="double-bottom-border">Pasta</span></span>
+          <span class="outside-border"><span ng-click="getMenuByCategory('international')" class="double-bottom-border">International</span></span>
+          <span class="outside-border"><span ng-click="getMenuByCategory('indian-regional')" class="double-bottom-border">Indian Regional</span></span>
+          <span class="outside-border"><span ng-click="getMenuByCategory('indian-special')" class="double-bottom-border">indian Basics</span></span>
+        </div>
+      </div>
+      <div class="row white curved-edge filtered-preference" ng-controller="MenuItemCtrl" ng-repeat="menuItem in menus">
+          <div class="col-md-5">
+                <div class="row">
+                  <div class="col-md-12">
+                    <img src="http://placehold.it/200x200" width="100%" class="food-showcase-image" />
+                  </div>
+                  <div class="col-md-12 chef-details">
+                    <span><img src="http://placehold.it/100x100" class="chef-image" /></span><span class="chef-name">{{menuItem.chef.name}}</span>
+                  </div>
+                  <div class="col-md-12 special-instructions">
+                    <input type="text" class="form-control input-md" placeholder="Special Instructions" />
+                  </div>
+                </div>
+              </div>
+          <div class="col-md-7">
+                <div class="row">
+                  <div class="col-md-12">
+                    <span class="pull-left dish-name">{{menuItem.name}}<img src="images/veg-symbol.png" width="15px"/> </span> <span class="pull-right dish-price">INR {{selectedSubCategory.cost || menuItem.portions[0].cost}}</span>
+                  </div>
+                  <div class="col-md-12">
+                    <h5> <span class="block-header-desc"><em>{{menuItem.description}}</em></span></h5>
+                  </div>
+                </div>
+                <div class="row social-share">
+                  <div class="col-md-12">
+                    <span class="facebook-span"><i class="fa fa-facebook"></i></span>
+                    <span class="twitter-span"><i class="fa fa-twitter"></i></span>
+                    <span class="linkedin-span"><i class="fa fa-linkedin"></i></span>
+                  </div>
+                </div>
+                <div class="row quantity-row">
+                  <div class="col-md-12">
+                    Quantity
+                  </div>
+                  <div class="col-md-12 meal-quantity">
+                    <span ng-repeat="portions in menuItem.portions"> 
+                      <input type="radio" name="mealQuantity" ng-click="updateMenuItemPrice(menuItem,portions)" ng-model="itemcost" value="{{portions.cost}}" /> <label>{{portions.value}} {{menuItem.type}}</label>
+                    </span>
+                  </div>
+                </div>
+
+                <div class="row add-dish">
+                  <div class="col-md-12 pull-right">
+                    <button ng-click="addToCart(menuItem)" class="btn btn-md add-dish-button pull-right">ADD</button>
+                  </div>
+                </div>
+              </div>
+      </div>
+
+    </div>
+    <div ng-controller="CartCtrl" class="col-md-4 col-xs-12 col-2">
+      <div class="row white curved-edge order-summary">
+        <div class="col-md-12 order-summary-header">
+          <h5><span class="block-header">Order Summary</span></h5>
+        </div>
+        <div class="col-md-12">
+          <table class="table borderless">
+            <thead>
+              <th class="col-md-5">ITEMS</th>
+              <th class="col-md-3">QTY</th>
+              <th class="col-md-4">PRICE</th>
+            </thead>
+            <tbody>
+              <tr>
+                <td colspan="3" class="text-center order-summary-date"><em>-{{selectedDate}}, Lunch-</em></td>
+              </tr>
+              <tr ng-repeat="cartItem in cart.item" class="row-border-bottom">
+                <td><h6>{{cartItem.item.name}}</h6></td>
+                <td><h6><span class="order-summary-quantity">01</span></h6></td>
+                <td><h6>INR {{cartItem.portions.cost}}</h6></td>
+              </tr>
+            </tbody>
+          </table>
+          <table class="table borderless calculations">
+            <tbody>
+              <tr>
+                <td class="col-md-8"><h6 class="order-summary-calculation-text">SUBTOTAL</h6></td>
+                <td class="col-md-4"><h6 class="order-summary-calculation-figures">INR {{cart.subTotal || 0}}</h6></td>
+              </tr>
+              <tr>
+                <td class="col-md-8"><h6 class="order-summary-calculation-text">DISCOUNT</h6></td>
+                <td class="col-md-4"><h6 class="order-summary-calculation-figures">INR {{cart.discount || 0}}</h6></td>
+              </tr>
+              <tr>
+                <td class="col-md-8"><h6 class="order-summary-calculation-text">TAX</h6></td>
+                <td class="col-md-4"><h6 class="order-summary-calculation-figures">INR {{cart.tax || 0}}</h6></td>
+              </tr>
+              <tr class="row-border-bottom">
+                <td class="col-md-8 "><h6 class="order-summary-calculation-text custom-padding-bottom-10">DELIVERY</h6></td>
+                <td class="col-md-4"><h6 class="order-summary-calculation-figures">INR {{cart.delivery || 0}}</h6></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="payment-mode col-md-12">
+          <span class="col-xs-6"><input name="payment" type="radio"><label class="ion-ios-bookmarks" for="wallet">Wallet</label></span>
+          <span class="col-xs-6"><input name="payment" type="radio"><label class="ion-card" for="card">Card</label></span>
+        </div>
+        <div class="col-md-12">
+          <div class="col-md-12 grand-total-section">
+            <span class="pull-left"><h6>GRAND TOTAL</h6></span><span class="pull-right"><h6>INR {{cart.total || 0}}</h6></span>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <button class="btn btn-xs place-order" ng-click="checkOut()"><h6>Place Order</h6></button>
+        </div>
+      </div>
+      <div class="row white curved-edge promo-code-section">
+        <div class="col-md-12 promotions-header">
+          <h5><span class="block-header">Promotions</span></h5>
+        </div>
+        <div class="col-md-12">
+          <form class="form-inline">
+            <input type="text" placeholder="Enter Promo Code" class="form-control input-xs" />
+            <button class="btn btn-md apply-code">Apply</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
