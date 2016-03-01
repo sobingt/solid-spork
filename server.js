@@ -67,7 +67,15 @@ app.post('/auth/facebook', authController.postFacebookLogin);
 app.post('/auth/twitter', authController.postTwitterLogin);
 app.post('/auth/foursquare', authController.postFoursquareLogin);
 app.post('/auth/unlink/:provider', authController.ensureAuthenticated, authController.getUnlinkAuth);
-
+/*
+ |-----------------------------------------------------------
+ | ADMIN PANEL
+ |--------------------/admin---------------------------------
+ */
+ app.get('/admin/getUsers', userController.getUsers);
+ app.post('/admin/updateUser', userController.updateUser);
+ app.post('/admin/deleteUser', userController.deleteUser);
+ app.post('/admin/createUser', userController.createUser);
 /*
  |-----------------------------------------------------------
  | Start the Server

@@ -18,7 +18,7 @@ var userSchema = new mongoose.Schema({
     website: { type: String, default: '' },
     picture: { type: String, default: '' }
   },
-  
+
   resetPasswordToken: String,
   resetPasswordExpires: Date
 });
@@ -29,7 +29,9 @@ userSchema.pre('save', function(next) {
     return next();
   }
   bcrypt.genSalt(10, function(err, salt) {
-    bcrypt.hash(user.password, salt, function(err, hash) {
+    if(err) return next(err);
+    bcrypt.hash(user.password, salt, null, function(err, hash) {
+      if(err) return next(err);
       user.password = hash;
       next();
     });
