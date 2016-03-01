@@ -43,8 +43,8 @@ exports.putCurrentUser = function(req, res) {
 exports.updateUser = function(req, res){
   User.findById(req.query.userId).exec(function(err, user){
     if(err) res.end("Error in update User");
-    user.email = req.body.email,
-    user.password = req.body.password,
+    user.email = req.body.email;
+    user.password = req.body.password;
     user.profile = {
       name: req.body.name,
       gender: req.body.gender,

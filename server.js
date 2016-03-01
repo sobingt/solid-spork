@@ -76,6 +76,11 @@ app.post('/auth/unlink/:provider', authController.ensureAuthenticated, authContr
  app.post('/admin/updateUser', userController.updateUser);
  app.post('/admin/deleteUser', userController.deleteUser);
  app.post('/admin/createUser', userController.createUser);
+ //menu
+ app.get('/admin/getMenus', menuController.getAllMenus);
+ app.post('/admin/updateMenu', menuController.updateMenu);
+ app.post('/admin/deleteMenu', menuController.deleteMenu);
+ app.post('/admin/createMenu', menuController.createMenu);
 /*
  |-----------------------------------------------------------
  | Start the Server
