@@ -79,6 +79,7 @@ exports.putMenu = function(req, res) {
       menu.type = req.body.type || menu.type;
       menu.description = req.body.description || menu.description;
       menu.category = req.body.category || menu.category;
+      menu.date = req.body.date || menu.date;
       var userValue = req.body.value;
       var found = false;
       for(var i=0;i<menu.portions.length;i++){
